@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Chaplin Esfiharia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="register-page">
+        <section class="register-card">
+            <div class="register-top">
+                <div class="register-icon"><i class="fa-solid fa-user-plus"></i></div>
+                <h1>Crie sua conta</h1>
+                <p>Cadastre-se na Chaplin Esfiharia para fazer seus pedidos.</p>
+            </div>
+
+            <form class="register-form" id="registerForm">
+                <div class="register-field">
+                    <label for="registerName">Nome completo</label>
+                    <input type="text" id="registerName" name="name" placeholder="Digite seu nome" autocomplete="name" required minlength="3">
+                </div>
+                <div class="register-field">
+                    <label for="registerPhone">Telefone</label>
+                    <input type="tel" id="registerPhone" name="phone" placeholder="(14) 99999-9999" autocomplete="tel" required>
+                </div>
+                <div class="register-field">
+                    <label for="registerEmail">E-mail</label>
+                    <input type="email" id="registerEmail" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+                </div>
+                <div class="register-field">
+                    <label for="registerPassword">Senha</label>
+                    <input type="password" id="registerPassword" name="password" placeholder="Crie uma senha (mínimo 8 caracteres)" autocomplete="new-password" required minlength="8">
+                </div>
+                <div class="register-field">
+                    <label for="registerPasswordConfirm">Confirmar senha</label>
+                    <input type="password" id="registerPasswordConfirm" name="passwordConfirm" placeholder="Digite a senha novamente" autocomplete="new-password" required minlength="8">
+                </div>
+
+                <div class="register-consent">
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" required aria-describedby="termsHelp">
+                    <div>
+                        <label for="acceptTerms">Li e aceito os <a href="termos.html" target="_blank" rel="noopener noreferrer">Termos de Aceite e Consentimento para Tratamento de Dados Pessoais</a>.</label>
+                        <p id="termsHelp">A leitura dos termos é necessária antes de continuar o cadastro.</p>
+                    </div>
+                </div>
+
+                <div id="registerMessage" class="register-message" role="status" aria-live="polite"></div>
+                <button class="register-submit" type="submit">Cadastrar</button>
+            </form>
+
+            <p class="register-note">Seus dados devem ser enviados e armazenados com segurança por um sistema de cadastro no servidor.</p>
+            <a class="register-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao cardápio</a>
+        </section>
+    </main>
+    <script src="cadastro.js"></script>
+</body>
+</html>

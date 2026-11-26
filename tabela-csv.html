@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Relatórios - Chaplin Esfiharia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="tabela-csv.js" defer></script>
+</head>
+<body>
+  <main class="csv-page">
+    <section class="csv-card">
+      <a class="terms-back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Voltar ao cardápio</a>
+      <div class="csv-heading"><span class="csv-heading-icon"><i class="fa-solid fa-file-csv"></i></span><div><h1>Gerador de Relatórios</h1><p>Envie um arquivo CSV para gerar seu relatório em formato de tabela.</p></div></div>
+      <div class="csv-upload">
+        <label for="csvFile">Selecionar arquivo CSV</label>
+        <input id="csvFile" type="file" accept=".csv,text/csv,text/plain" aria-describedby="csvPrivacy">
+        <p id="csvPrivacy">O arquivo é processado somente no seu navegador. Nenhum dado é enviado ao servidor.</p>
+      </div>
+      <div id="csvError" class="csv-error" role="alert" hidden></div>
+      <section id="csvResult" hidden aria-label="Tabela gerada do CSV">
+        <div class="csv-toolbar"><div><h2 id="csvFilename"></h2><p id="csvStats" aria-live="polite"></p></div><label class="csv-search-label" for="csvSearch">Buscar na tabela <input id="csvSearch" type="search" placeholder="Pesquisar dados..."></label></div>
+        <div class="csv-table-scroll"><table id="csvTable"><thead></thead><tbody></tbody></table></div>
+        <div class="csv-pagination"><span id="csvPageInfo" aria-live="polite"></span><div><button id="csvPrev" type="button">Anterior</button><button id="csvNext" type="button">Próxima</button></div></div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaplin Esfiharia - Cardápio Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho com Banner e Logo -->
+    <header class="store-header">
+        <div class="cover-banner">
+            <img src="https://storage.googleapis.com/prod-cardapio-web/uploads/company/image/10260/24a7073eAAAASSS.jpg" alt="Banner Chaplin Esfiharia" class="cover-img">
+            <div class="cover-overlay"></div>
+        </div>
+
+        <div class="container header-info-card">
+            <div class="logo-wrapper">
+                <img src="https://storage.googleapis.com/prod-cardapio-web/uploads/company/logo/10260/c33c6266chaplin.jpg" alt="Logo Chaplin Esfiharia" class="store-logo">
+            </div>
+
+            <div class="store-details">
+                <div class="title-row">
+                    <h1>Chaplin Esfiharia</h1>
+                    <span class="status-badge" id="storeStatus" aria-live="polite"><i class="fa-solid fa-circle"></i> Verificando horário...</span>
+                </div>
+                <p class="store-subtitle">As melhores esfihas abertas, fechadas, pastéis e combos de Botucatu!</p>
+                
+                <div class="store-meta">
+                    <span><i class="fa-solid fa-location-dot"></i> Rua Dr. Costa Leite, 1770 - Centro, Botucatu</span>
+                    <span><i class="fa-solid fa-clock"></i> Entrega: 1h - 1h30</span>
+                    <span><i class="fa-solid fa-motorcycle"></i> Pedido mín. R$ 0,00</span>
+                </div>
+            </div>
+
+            <div class="header-actions">
+                <a class="btn-register-link" href="tabela-csv.html"><i class="fa-solid fa-file-csv"></i> Gerador de Relatórios</a>
+                <a class="btn-register-link" href="cadastro.html">
+                    <i class="fa-solid fa-user-plus"></i> Criar conta
+                </a>
+                <a class="btn-register-link btn-order-whatsapp" href="https://wa.me/5514996431017?text=Ol%C3%A1%21%20Gostaria%20de%20fazer%20um%20pedido%20na%20Chaplin%20Esfiharia." target="_blank" rel="noopener noreferrer" aria-label="Pedir diretamente pelo WhatsApp da Chaplin Esfiharia">
+                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Pedir pelo WhatsApp
+                </a>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar esfihas, combos, bebidas...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegação Fixa de Categorias -->
+    <nav class="category-nav" id="categoryNav">
+        <div class="container nav-scroll">
+            <button class="cat-btn active" data-category="todos">Todos os Itens</button>
+            <button class="cat-btn" data-category="destaques">🔥 Mais Pedidos</button>
+            <button class="cat-btn" data-category="combos">🎁 Combos Especiais</button>
+            <button class="cat-btn" data-category="salgadas">🥩 Esfihas Salgadas</button>
+            <button class="cat-btn" data-category="doces">🍫 Esfihas Doces</button>
+            <button class="cat-btn" data-category="bebidas">🥤 Bebidas</button>
+        </div>
+    </nav>
+
+    <!-- Galeria de Destaques Visuais -->
+    <section class="container promo-gallery">
+        <div class="promo-card">
+            <img src="https://storage.googleapis.com/prod-cardapio-web/uploads/item/image/1044656/998cbce61111.jpg" alt="Combo Família">
+            <div class="promo-caption">
+                <span class="promo-tag">OFERTA DO DIA</span>
+                <h3>Combo Família 6 Esfihas</h3>
+                <p>Sabores tradicionais + Refrigerante 2L</p>
+            </div>
+        </div>
+        <div class="promo-card">
+            <img src="https://storage.googleapis.com/prod-cardapio-web/uploads/item/image/1044646/e31ac5998080.jpg" alt="Esfihas Especiais">
+            <div class="promo-caption">
+                <span class="promo-tag">MASSA ARTESANAL</span>
+                <h3>Mais de 16 anos de tradição</h3>
+                <p>Esfihas em torno de 17 cm (tamanho de uma pizza broto)</p>
+            </div>
+        </div>
+        <div class="promo-card">
+            <img src="https://storage.googleapis.com/prod-cardapio-web/uploads/item/image/2138618/6cb49dc1esfiha_doce.jpg" alt="Esfihas Doces">
+            <div class="promo-caption">
+                <span class="promo-tag">SOBREMESA</span>
+                <h3>Esfihas Doces Premium</h3>
+                <p>Creme de Avelã, Banana com Doce de Leite e Canela</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cardápio Principal -->
+    <main class="container menu-container" id="menuContainer">
+        <!-- Os cards serão renderizados dinamicamente pelo JavaScript -->
+    </main>
+
+    <!-- Barra Flutuante do Carrinho -->
+    <div class="floating-cart-bar" id="floatingCartBar" style="display: none;">
+        <div class="container cart-bar-content">
+            <div class="cart-summary-info">
+                <span class="cart-badge-count" id="cartCount">0</span>
+                <span class="cart-label">Ver Sacola de Pedidos</span>
+            </div>
+            <span class="cart-total-price" id="cartTotalBar">R$ 0,00</span>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes do Produto (Foto Ampliada e Adicionais) -->
+    <div class="modal-backdrop" id="productModal">
+        <div class="modal-card">
+            <button class="modal-close" id="closeProductModal"><i class="fa-solid fa-xmark"></i></button>
+            <img src="" alt="" id="modalImg" class="modal-hero-img">
+            <div class="modal-body">
+                <span class="modal-cat-tag" id="modalCategory">Categoria</span>
+                <h2 id="modalTitle">Nome do Produto</h2>
+                <p id="modalDesc" class="modal-description">Descrição detalhada do item.</p>
+                
+                <div class="modal-obs">
+                    <label for="itemObs">Alguma observação?</label>
+                    <input type="text" id="itemObs" placeholder="Ex: Tirar cebola, bem assada...">
+                </div>
+
+                <div class="modal-footer">
+                    <div class="qty-control">
+                        <button id="modalMinus"><i class="fa-solid fa-minus"></i></button>
+                        <span id="modalQty">1</span>
+                        <button id="modalPlus"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <button class="btn-add-confirm" id="confirmAddBtn">
+                        Adicionar • <span id="modalSubtotal">R$ 0,00</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal / Gaveta da Sacola e Finalização WhatsApp -->
+    <div class="modal-backdrop" id="cartModal">
+        <div class="modal-card cart-drawer">
+            <div class="drawer-header">
+                <h2><i class="fa-solid fa-bag-shopping"></i> Seu Pedido</h2>
+                <button class="modal-close static" id="closeCartModal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="cart-items-list" id="cartItemsList">
+                <!-- Itens do carrinho -->
+            </div>
+
+            <div class="checkout-form">
+                <h3>Dados para Entrega</h3>
+                <input type="text" id="clientName" placeholder="Seu Nome Completo" required>
+                <input type="text" id="clientAddress" placeholder="Endereço Completo (Rua, Número, Bairro)" required>
+                <select id="paymentMethod">
+                    <option value="PIX">Pagamento via PIX</option>
+                    <option value="Cartão de Crédito/Débito">Cartão na Entrega</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                </select>
+            </div>
+
+            <div class="drawer-footer">
+                <div class="total-row">
+                    <span>Total do Pedido:</span>
+                    <strong id="cartFinalTotal">R$ 0,00</strong>
+                </div>
+                <button class="btn-whatsapp" id="sendWhatsappBtn">
+                    <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="store-footer">
+        <div class="container">
+            <p><strong>Chaplin Esfiharia</strong> • Botucatu - SP</p>
+            <p>Atendimento todos os dias das 18h às 23h</p>
+            <p><a class="footer-terms-link" href="tabela-csv.html"><i class="fa-solid fa-table"></i> Gerador de Relatórios</a></p>
+            <p><a class="footer-terms-link" href="termos.html">Termos de Aceite e Tratamento de Dados Pessoais</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
