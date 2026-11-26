@@ -1,0 +1,2 @@
+Objetivo
+Desenvolver e implementar um ambiente web interativo e inclusivo, caracterizado por navegação simplificada, menus dinâmicos e assistência conversacional automatizada por meio de Chatbot com Inteligência Artificial integrado ao WhatsApp. A plataforma otimiza a interatividade do cliente no processo de pedidos para restaurantes, reduzindo ruídos de comunicação, aumentando a conversão de vendas no delivery e garantindo autonomia a usuários de diferentes níveis de letramento digital.
